@@ -5,6 +5,7 @@ import threading
 import os
 
 language = 'en-IN'
+platf=platform.system()
 
 text=''
 engine = pyttsx3.init()
@@ -27,17 +28,35 @@ def SpeakText(command):
 
 #feature functions
 def browser():
-    os.system('start www.google.com')
+    if(platf=="Linux"):
+        os.system("gio open https://www.google.com")
+    else:
+        os.system("start https://www.google.com")
 def calculator():
-    os.system('calc')
+    if(platf=="Linux")
+        os.system("gnome-calculator")
+    else:
+        os.system('calc')
 def calendar():
-    os.system('start outlookcal:')
+    if(platf=="Linux"):
+        os.system('start outlookcal:')
+    else:
+        os.system("gnome-calendar")
 def photos():
-    os.system('start ms-photos:')
+    if(platf=="Linux"):
+        os.system('start ms-photos:')
+    else:
+        printf("Not Available !")
 def screenshot():
-    os.system('start ms-screenclip:')
+    if(platf=="Linux"):
+        os.system('start ms-screenclip:')
+    else:
+        os.system("gnome-screenshot")
 def mail():
-    os.system('outlookmail:')    
+    if(platf=="Linux"):
+        os.system('outlookmail:')    
+    else:
+        os.system("thunderbird")
 def search():
     print('\n\nWhat do you want to search?....\n\n')
     SpeakText('What do you want to search')
